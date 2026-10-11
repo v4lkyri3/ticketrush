@@ -1,0 +1,38 @@
+# Lightweight infra for Phases 1-2 (monolith). Run your API and React app on the host.
+#   docker compose -f docker-compose.dev.yml up -d
+#   docker compose -f docker-compose.dev.yml down        # keep data
+#   docker compose -f docker-compose.dev.yml down -v     # wipe data
+#
+# The full stack (Kafka, Nginx, replicas...) lives in docker-compose.yml (Phase 4).
+
+name: ticketrush-dev
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ticketrush
+      POSTGRES_PASSWORD: ticketrush_dev
+      POSTGRES_DB: ticketrush
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ticketrush -d ticketrush"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
