@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TicketRush.Api/TicketRush.Api.csproj" />
+    <Project Path="src/TicketRush.SharedKernel/TicketRush.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Booking/">
+    <Project Path="src/Modules/Booking/TicketRush.Modules.Booking/TicketRush.Modules.Booking.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Catalog/">
+    <Project Path="src/Modules/Catalog/TicketRush.Modules.Catalog/TicketRush.Modules.Catalog.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TicketRush.SharedKernel.Tests/TicketRush.SharedKernel.Tests.csproj" />
+  </Folder>
+</Solution>
