@@ -11,6 +11,7 @@
     <Project Path="src/Modules/Catalog/TicketRush.Modules.Catalog/TicketRush.Modules.Catalog.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/TicketRush.Modules.Catalog.Tests/TicketRush.Modules.Catalog.Tests.csproj" />
     <Project Path="tests/TicketRush.SharedKernel.Tests/TicketRush.SharedKernel.Tests.csproj" />
   </Folder>
 </Solution>
