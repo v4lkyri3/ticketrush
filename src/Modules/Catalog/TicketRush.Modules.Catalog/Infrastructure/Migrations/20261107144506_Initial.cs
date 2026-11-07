@@ -89,10 +89,11 @@ namespace TicketRush.Modules.Catalog.Infrastructure.Migrations
                 column: "VenueId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_venue_seats_VenueId",
+                name: "IX_venue_seats_VenueId_Section_Row_Number",
                 schema: "catalog",
                 table: "venue_seats",
-                column: "VenueId");
+                columns: new[] { "VenueId", "Section", "Row", "Number" },
+                unique: true);
         }
 
         /// <inheritdoc />

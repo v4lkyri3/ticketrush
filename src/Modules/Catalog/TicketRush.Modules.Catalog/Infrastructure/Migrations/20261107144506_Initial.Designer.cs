@@ -12,7 +12,7 @@ using TicketRush.Modules.Catalog.Infrastructure;
 namespace TicketRush.Modules.Catalog.Infrastructure.Migrations
 {
     [DbContext(typeof(CatalogDbContext))]
-    [Migration("20261107141043_Initial")]
+    [Migration("20261107144506_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -108,7 +108,8 @@ namespace TicketRush.Modules.Catalog.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VenueId");
+                    b.HasIndex("VenueId", "Section", "Row", "Number")
+                        .IsUnique();
 
                     b.ToTable("venue_seats", "catalog");
                 });

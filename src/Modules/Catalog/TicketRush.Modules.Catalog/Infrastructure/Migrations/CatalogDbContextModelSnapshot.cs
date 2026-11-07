@@ -105,7 +105,8 @@ namespace TicketRush.Modules.Catalog.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VenueId");
+                    b.HasIndex("VenueId", "Section", "Row", "Number")
+                        .IsUnique();
 
                     b.ToTable("venue_seats", "catalog");
                 });
