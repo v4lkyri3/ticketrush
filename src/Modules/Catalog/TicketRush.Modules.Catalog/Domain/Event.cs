@@ -12,7 +12,7 @@ public class Event : Entity
     public Guid VenueId {get; private set;}
     public string Title {get; private set;}
     public string Description {get; private set;}
-    public DateTime StartsAtUtc {get; private set;}
+    public DateTime StartsAtUtc {get; private set;} 
     public decimal BasePrice {get; private set;}
     public EventStatus Status {get; private set;}
 
